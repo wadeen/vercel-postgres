@@ -7,7 +7,8 @@ const FetchPosts = async (_request: NextApiRequest, response: NextApiResponse) =
 
     return response.status(200).json({ data });
   } catch (error) {
-    return response.status(500).json({ error });
+    console.error("An error occurred while fetching the post:", error);
+    return response.status(500).json({ error: "An internal server error occurred" });
   }
 };
 

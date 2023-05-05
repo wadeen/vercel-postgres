@@ -8,6 +8,10 @@ export const PostRecord: React.FC<{ post: Post }> = ({ post }) => {
   const handleDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {
     await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/db/deletePost`, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "vercel-postgres-demo",
+      },
       body: JSON.stringify({ id: event.currentTarget.value }),
     });
 
