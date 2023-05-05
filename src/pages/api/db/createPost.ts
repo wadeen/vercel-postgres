@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { prisma } from "../../../lib/prisma";
+import { prisma } from "../../../../lib/prisma";
 
 const CreatePost = async (request: NextApiRequest, response: NextApiResponse) => {
   const { title, description } = JSON.parse(request.body);
